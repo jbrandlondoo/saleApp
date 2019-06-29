@@ -11,18 +11,16 @@ import { StyleSheet, View,ScrollView,Text} from 'react-native';
 
 import LoginLayout from "./app/components/Login";
 import HeaderBar from "./app/components/HeaderBar";
-import BoxProduct from "./app/components/BoxProduct"
+import BoxProduct from "./app/components/BoxProduct";
+import AddProduct from "./app/components/AddProduct";
+import Profile from "./app/components/Profile";
 
 export default class App extends React.Component {
  render() {
     return (
     	<View style={styles.root}>
     		<HeaderBar/>
-    		<ScrollView>
-    		<BoxProduct/>
-    		<BoxProduct/>
-    		<Text>   </Text>
-    		</ScrollView>
+        <Profile/>
     	</View>
     );
   }
@@ -31,6 +29,6 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   root:{
   	flex: 1,
-  	backgroundColor:'#F8F9F6',
+  	backgroundColor:'white',
   }
 });

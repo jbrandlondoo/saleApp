@@ -31,10 +31,11 @@ const styles = StyleSheet.create({
     flexDirection:'row',
   },
   showProduct:{
-    height: 380,
+    height: 390,
     backgroundColor: '#FFFFFF',
-    marginTop:5,
-    borderWidth:0,
+    borderWidth:0.5,
+    borderRadius:5,
+    margin:3,
   },
   cost:{
     fontSize:15,
@@ -42,7 +43,8 @@ const styles = StyleSheet.create({
   },
   image:{
     height:300,
-    resizeMode:'contain'
+    resizeMode:'contain',
+    borderRadius:5,
   },
   whattsapptxt:{
     fontSize:15,
