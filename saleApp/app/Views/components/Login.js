@@ -1,23 +1,23 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TextInput,TouchableOpacity} from 'react-native';
-// import LoginLayout from "./app/components/layout/LoginLayout";
+
 
 export default class Login extends React.Component{
-	render(){
-		return (
+  add=()=>{
+  }
+  render(){
+    return (
       <View style={styles.container}>
-        <View style={styles.logoViewLogin}>
-          <Text style={styles.textLogo}>SaleApp</Text>
-        </View>
         <View style={styles.inputsLogin}>
           <TextInput
             style={styles.inputCredential}
-            onChangeText={this.add}
+            onChangeText={()=>{this.add}}
             placeholder="Mail"
           />
           <TextInput
             style={styles.inputCredential}
-            onChangeText={this.add}
+            onChangeText={()=>{this.add}}
+            secureTextEntry = {true}
             placeholder="Contraseña"
           />
           <TouchableOpacity style={styles.buttonLogin}>
@@ -29,22 +29,12 @@ export default class Login extends React.Component{
         </View>   
       </View>
     );
-	}
-} 
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  logoViewLogin: {
-    flex: 1,
-    backgroundColor: '#F5F8F1',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  textLogo: {
-    color:'#71726F',
-    fontSize: 25,
   },
   inputsLogin:{
     flex: 2,

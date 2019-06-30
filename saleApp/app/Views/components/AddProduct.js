@@ -6,10 +6,9 @@ export default class AddProduct extends React.Component{
   constructor(){
     super();
     this.state={
-      url:require('./../img/icons8-producto-filled-100.png'),
+      url:require('./../../img/icons8-producto-filled-100.png'),
     }
   }
-
 
 	render(){
 		return (
@@ -28,12 +27,12 @@ export default class AddProduct extends React.Component{
         <View style={styles.options}>
           <View style={styles.btnOptions}>
             <TouchableOpacity>
-              <Image style={styles.imageOption} source={require('./../img/icons8-cámara-compacta-filled-50.png')}/> 
+              <Image style={styles.imageOption} source={require('./../../img/icons8-cámara-compacta-filled-50.png')}/> 
         </TouchableOpacity>
           </View>
           <View style={styles.btnOptions}>
             <TouchableOpacity>
-              <Image style={styles.imageOption} source={require('./../img/icons8-carpeta-filled-50.png')}/> 
+              <Image style={styles.imageOption} source={require('./../../img/icons8-carpeta-filled-50.png')}/> 
         </TouchableOpacity>
           </View>
         </View>

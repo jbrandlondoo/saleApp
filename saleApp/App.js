@@ -5,30 +5,29 @@
  * @format
  * @flow
  */
+import React from 'react';
+import { View, Text, Button } from 'react-native';
+import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation'; // Version can be specified in package.json
+import LoginView from "./app/Views/LoginView";
+import MyShopView from "./app/Views/MyShopView";
+import ShopView from "./app/Views/ShopView";
+import ProfileView from "./app/Views/ProfileView";
 
-import React, {Component} from 'react';
-import { StyleSheet, View,ScrollView,Text} from 'react-native';
-
-import LoginLayout from "./app/components/Login";
-import HeaderBar from "./app/components/HeaderBar";
-import BoxProduct from "./app/components/BoxProduct";
-import AddProduct from "./app/components/AddProduct";
-import Profile from "./app/components/Profile";
-
-export default class App extends React.Component {
- render() {
-    return (
-    	<View style={styles.root}>
-    		<HeaderBar/>
-        <Profile/>
-    	</View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  root:{
-  	flex: 1,
-  	backgroundColor:'white',
-  }
+const AppNavigator = createStackNavigator({
+  Login: {
+    screen: LoginView,
+  },
+  Shop: {
+    screen: ShopView,
+  },
+  Profile: {
+    screen: ProfileView,
+  },
+  MyShop: {
+    screen: MyShopView,
+  },
+}, {
+    initialRouteName: 'Login',
 });
+
+export default createAppContainer(AppNavigator);
