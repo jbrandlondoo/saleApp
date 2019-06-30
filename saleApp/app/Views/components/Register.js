@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TextInput,TouchableOpacity} from 'react-native';
 
 
-export default class Login extends React.Component{
+export default class Register extends React.Component{
   add=()=>{
   }
   render(){
@@ -12,7 +12,14 @@ export default class Login extends React.Component{
           <TextInput
             style={styles.inputCredential}
             onChangeText={()=>{this.add}}
-            placeholder="Mail"
+            placeholder="nombre usuario"
+          />
+          <TextInput
+            style={styles.inputCredential}
+            onChangeText={()=>{this.add}}
+            placeholder="Teléfono"
+            keyboardType={'numeric'}
+
           />
           <TextInput
             style={styles.inputCredential}
@@ -20,15 +27,7 @@ export default class Login extends React.Component{
             secureTextEntry = {true}
             placeholder="Contraseña"
           />
-          <TouchableOpacity 
-          style={styles.buttonLogin}
-           onPress={() => this.props.navEvent.navigation.navigate('Home')}
-          >
-            <Text style={styles.textButtonLogin}>Ingresar</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.buttonLogin}
-          onPress={() => this.props.navEvent.navigation.navigate('Register')}
-          >
+          <TouchableOpacity style={styles.buttonLogin}>
             <Text style={styles.textButtonLogin}>Registarme</Text>
           </TouchableOpacity>
         </View>   

@@ -91,7 +91,6 @@ const styles = StyleSheet.create({
   },
   containerSave:{
     alignItems: 'center',
-
   },
   btnSave:{
     height: 37,

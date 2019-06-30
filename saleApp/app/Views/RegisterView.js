@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { StyleSheet, View,ScrollView,Text} from 'react-native';
-import Login from "./components/Login";
-export default class LoginView extends React.Component{
+import Register from "./components/Register";
+export default class RegisterView extends React.Component{
 	static navigationOptions = {
 	    title: 'SaleApps',
       	headerTintColor: '#FFFFFF',
@@ -12,7 +12,7 @@ export default class LoginView extends React.Component{
 	render(){
 		return(
 			<View style={styles.root}>
-			<Login navEvent={this.props}/>
+			<Register navEvent={this.props}/>
     		</View>
 		);
 	}
