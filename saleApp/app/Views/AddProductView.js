@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { StyleSheet, View,ScrollView,Text} from 'react-native';
 import AddProduct from "./components/AddProduct";
+
+
 export default class ShopView extends React.Component{
 	static navigationOptions = {
 	    title: 'SaleApps',
@@ -13,7 +15,7 @@ export default class ShopView extends React.Component{
 		return(
 			<View>
 				<ScrollView>
-					<AddProduct/>
+					<AddProduct navEvent={this.props}/>
 				</ScrollView>
 			</View>
 		);

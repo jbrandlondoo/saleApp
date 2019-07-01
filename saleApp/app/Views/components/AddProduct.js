@@ -26,7 +26,9 @@ export default class AddProduct extends React.Component{
         </View>
         <View style={styles.options}>
           <View style={styles.btnOptions}>
-            <TouchableOpacity>
+          <TouchableOpacity
+          onPress={() => this.props.navEvent.navigation.navigate('Camera')}
+          >
               <Image style={styles.imageOption} source={require('./../../img/icons8-cámara-compacta-filled-50.png')}/> 
         </TouchableOpacity>
           </View>

@@ -14,6 +14,7 @@ import MyShopView from "./app/Views/MyShopView";
 import ShopView from "./app/Views/ShopView";
 import ProfileView from "./app/Views/ProfileView";
 import AddProductView from "./app/Views/AddProductView";
+import CameraView from "./app/Views/CameraView";
 
 
 
@@ -85,6 +86,16 @@ const AppNavigator = createStackNavigator({
   Register:{
     screen: RegisterView,
     navigationOptions:  {
+    },
+  },
+  Camera:{
+    screen:CameraView,
+    navigationOptions:  {
+     headerStyle: {
+         backgroundColor: '#000000',
+      },
+      headerTintColor: '#FFFFFF',
+      title: 'SaleApp',
     },
   },
 }, {
