@@ -12,7 +12,6 @@ import {
   ScrollView
 } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
-import firebase from 'react-native-firebase';
 import uuid from 'uuid/v4'; // Import UUID to generate UUID
 
 const options = {

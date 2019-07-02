@@ -8,7 +8,6 @@ import {
   Button,
   View
 } from 'react-native';
-import RNFetchBlob from 'react-native-fetch-blob';
 import firebaseConfig from './../CredentialsFirebase';
 import FirebaseClient from 'firebase';
 
