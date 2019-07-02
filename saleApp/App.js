@@ -14,11 +14,9 @@ import MyShopView from "./app/Views/MyShopView";
 import ShopView from "./app/Views/ShopView";
 import ProfileView from "./app/Views/ProfileView";
 import AddProductView from "./app/Views/AddProductView";
-<<<<<<< HEAD
 import CameraView from "./app/Views/CameraView";
 import CameraRollView from "./app/Views/CameraRollView";
-=======
->>>>>>> parent of 1b8ee96... camera
+
 
 
 
@@ -92,7 +90,6 @@ const AppNavigator = createStackNavigator({
     navigationOptions:  {
     },
   },
-<<<<<<< HEAD
     CameraRoll:{
     screen: CameraRollView,
     navigationOptions:  {
@@ -108,8 +105,6 @@ const AppNavigator = createStackNavigator({
       title: 'SaleApp',
     },
   },
-=======
->>>>>>> parent of 1b8ee96... camera
 }, {
     initialRouteName: 'Login',
 });
