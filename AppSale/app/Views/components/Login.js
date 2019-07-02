@@ -18,7 +18,7 @@ constructor(props) {
 
 componentWillMount() {
   try{
-  // firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig);
   }catch{
   }
   AsyncStorage.setItem('session',"Jose");
@@ -34,14 +34,14 @@ componentWillMount() {
 fetchUser = ()=>{
         let passWordD = this.state.passWord;
         let nav = this.props.navEvent.navigation;
-        // const temp = firebase.database().ref('users/'+this.state.userName).on('value',function(snapshot){
-        //     let passWordB = snapshot.val().passWord;
-        //     if (passWordB === passWordD) {
-        //       nav.navigate('Home');
-        //     }else{
-        //     Alert.alert('Intentelo de nuevo');
-        //     }
-        // });
+        const temp = firebase.database().ref('users/'+this.state.userName).on('value',function(snapshot){
+            let passWordB = snapshot.val().passWord;
+            if (passWordB === passWordD) {
+              nav.navigate('Home');
+            }else{
+            Alert.alert('Intentelo de nuevo');
+            }
+        });
 };
 
   render(){

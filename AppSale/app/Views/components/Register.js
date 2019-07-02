@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Alert, StyleSheet, Text, View, TextInput,TouchableOpacity} from 'react-native';
 import firebaseConfig from './../../CredentialsFirebase';
-// import firebase from 'firebase';
+import firebase from 'firebase';
 
 export default class Register extends React.Component{
 
@@ -16,23 +16,23 @@ export default class Register extends React.Component{
 
   componentWillMount() {
   try{
-  // firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig);
   }catch{
 
   }
   };
 
   insertUser = ()=>{
-            // firebase.database().ref('users/'+this.state.userName).set(
-            // {
-            //     phone: this.state.phone,
-            //     passWord:this.state.passWord
-            // }
-            // ).then(() => {
-            //     this.props.navEvent.navigation.goBack();
-            // }).catch((error) => {
-            //     // Alert.alert(error+"");
-            // });
+            firebase.database().ref('users/'+this.state.userName).set(
+            {
+                phone: this.state.phone,
+                passWord:this.state.passWord
+            }
+            ).then(() => {
+                this.props.navEvent.navigation.goBack();
+            }).catch((error) => {
+                // Alert.alert(error+"");
+            });
   };
 
   render(){

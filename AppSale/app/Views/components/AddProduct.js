@@ -1,9 +1,9 @@
 
 import React from 'react';
 import {AppRegistry,Platform,AsyncStorage,Image,PixelRatio,StyleSheet,Text,TouchableOpacity,View,TextInput,} from 'react-native';
-// import ImagePicker from 'react-native-image-picker';
+import ImagePicker from 'react-native-image-picker';
 import firebaseConfig from './../../CredentialsFirebase';
-// import firebase from 'firebase';
+import firebase from 'firebase';
 
 
 
@@ -30,7 +30,7 @@ export default class AddProduct extends React.Component{
 
    componentWillMount() {
     try{
-    // firebase.initializeApp(firebaseConfig);
+    firebase.initializeApp(firebaseConfig);
     }catch{
     }
     AsyncStorage.getItem('session').then((value)=>{
@@ -74,40 +74,40 @@ export default class AddProduct extends React.Component{
 // }
 
   uploadImage = () => {
-    // const ext = this.state.imageUri.split('.').pop(); // Extract image extension
-    // const filename = `${this.state.userName+this.state.description}.${ext}`; // Generate unique name
-    // this.setState({ uploading: true });
-    // firebase
-    //   .storage()
-    //   .ref(`images/${filename}`)
-    //   .putFile(this.state.imageUri)
-    //   .on(
-    //     firebase.storage.TaskEvent.STATE_CHANGED,
-    //     snapshot => {
-    //       let state = {};
-    //       state = {
-    //         ...state,
-    //         progress: (snapshot.bytesTransferred / snapshot.totalBytes) * 100 // Calculate progress percentage
-    //       };
-    //       if (snapshot.state === firebase.storage.TaskState.SUCCESS) {
-    //         const allImages = this.state.images;
-    //         allImages.push(snapshot.downloadURL);
-    //         state = {
-    //           ...state,
-    //           uploading: false,
-    //           imgSource: '',
-    //           imageUri: '',
-    //           progress: 0,
-    //           images: allImages
-    //         };
-    //       }
-    //       this.setState(state);
-    //     },
-    //     error => {
-    //       unsubscribe();
-    //       alert('Sorry, Try again.');
-    //     }
-    //   );
+    const ext = this.state.imageUri.split('.').pop(); // Extract image extension
+    const filename = `${this.state.userName+this.state.description}.${ext}`; // Generate unique name
+    this.setState({ uploading: true });
+    firebase
+      .storage()
+      .ref(`images/${filename}`)
+      .putFile(this.state.imageUri)
+      .on(
+        firebase.storage.TaskEvent.STATE_CHANGED,
+        snapshot => {
+          let state = {};
+          state = {
+            ...state,
+            progress: (snapshot.bytesTransferred / snapshot.totalBytes) * 100 // Calculate progress percentage
+          };
+          if (snapshot.state === firebase.storage.TaskState.SUCCESS) {
+            const allImages = this.state.images;
+            allImages.push(snapshot.downloadURL);
+            state = {
+              ...state,
+              uploading: false,
+              imgSource: '',
+              imageUri: '',
+              progress: 0,
+              images: allImages
+            };
+          }
+          this.setState(state);
+        },
+        error => {
+          unsubscribe();
+          alert('Sorry, Try again.');
+        }
+      );
   };
 
   selectPhotoTapped() {
@@ -120,30 +120,30 @@ export default class AddProduct extends React.Component{
       },
     };
 
-    // ImagePicker.showImagePicker(options, (response) => {
-    //   console.log('Response = ', response);
-    //     let source = { uri: response.uri };
-    //     this.setState({
-    //       avatarSource: source,
-    //       imageUri: source,
-    //     });
-    // });
+    ImagePicker.showImagePicker(options, (response) => {
+      console.log('Response = ', response);
+        let source = { uri: response.uri };
+        this.setState({
+          avatarSource: source,
+          imageUri: source,
+        });
+    });
   }
 
   insertToDB(){
-    // firebase.database().ref('products/'+this.state.userName+this.state.description).set(
-    //         {
-    //             description: this.state.description,
-    //             cost: this.state.cost,
-    //             phone: this.state.phone,
-    //             url: this.state.images[0],
-    //             userName:this.state.userName,
-    //         }
-    //         ).then(() => {
-    //             this.props.navEvent.navigation.goBack();
-    //         }).catch((error) => {
-    //             // Alert.alert(error+"");
-    //         });
+    firebase.database().ref('products/'+this.state.userName+this.state.description).set(
+            {
+                description: this.state.description,
+                cost: this.state.cost,
+                phone: this.state.phone,
+                url: this.state.images[0],
+                userName:this.state.userName,
+            }
+            ).then(() => {
+                this.props.navEvent.navigation.goBack();
+            }).catch((error) => {
+                // Alert.alert(error+"");
+            });
   }
   saveProduct(){
 
