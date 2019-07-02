@@ -60,10 +60,13 @@
 		5E947D9C8EC74C7A87307BF2 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA5644A72CA14D24868C9C3A /* SimpleLineIcons.ttf */; };
 		78FD00DC83C84A6288FF6656 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 745B2C92FF0E44E980941F2C /* Zocial.ttf */; };
 		39F961658E764D9AA8BAD8BA /* libRNCViewpager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B79195CE83714278B777B007 /* libRNCViewpager.a */; };
+<<<<<<< HEAD
 		82368224906D4CDAB6D67077 /* libRNCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 209ECD5AB0A1420E93052E7B /* libRNCamera.a */; };
 		7C5613D048AB436A81CBC89F /* libRNFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54374A5000724D14964CE204 /* libRNFirebase.a */; };
 		431138AE7AFF4F42B7EC0DAE /* libRNFetchBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A56B7596FA4C4439B70607DE /* libRNFetchBlob.a */; };
 		20B9879C273A471399F3A52A /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 893BB13568BB422199AA7E8E /* libRNImagePicker.a */; };
+=======
+>>>>>>> parent of 1b8ee96... camera
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -395,6 +398,7 @@
 		745B2C92FF0E44E980941F2C /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		6E9E517A2B6E46BE84EA2CC5 /* RNCViewpager.xcodeproj */ = {isa = PBXFileReference; name = "RNCViewpager.xcodeproj"; path = "../node_modules/@react-native-community/viewpager/ios/RNCViewpager.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		B79195CE83714278B777B007 /* libRNCViewpager.a */ = {isa = PBXFileReference; name = "libRNCViewpager.a"; path = "libRNCViewpager.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+<<<<<<< HEAD
 		3C1B1C7C0C6A4E31BBF41AB0 /* RNCamera.xcodeproj */ = {isa = PBXFileReference; name = "RNCamera.xcodeproj"; path = "../node_modules/react-native-camera/ios/RNCamera.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		209ECD5AB0A1420E93052E7B /* libRNCamera.a */ = {isa = PBXFileReference; name = "libRNCamera.a"; path = "libRNCamera.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		ED30BF130FBB4215839B6E47 /* RNFirebase.xcodeproj */ = {isa = PBXFileReference; name = "RNFirebase.xcodeproj"; path = "../node_modules/react-native-firebase/ios/RNFirebase.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
@@ -403,6 +407,8 @@
 		A56B7596FA4C4439B70607DE /* libRNFetchBlob.a */ = {isa = PBXFileReference; name = "libRNFetchBlob.a"; path = "libRNFetchBlob.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		9972849269B944A297F1AF91 /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; name = "RNImagePicker.xcodeproj"; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		893BB13568BB422199AA7E8E /* libRNImagePicker.a */ = {isa = PBXFileReference; name = "libRNImagePicker.a"; path = "libRNImagePicker.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+=======
+>>>>>>> parent of 1b8ee96... camera
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -434,10 +440,13 @@
 				56DFCD90D092486DBEB41A92 /* libRNGestureHandler.a in Frameworks */,
 				E79D8153743744B68316BA13 /* libRNVectorIcons.a in Frameworks */,
 				39F961658E764D9AA8BAD8BA /* libRNCViewpager.a in Frameworks */,
+<<<<<<< HEAD
 				82368224906D4CDAB6D67077 /* libRNCamera.a in Frameworks */,
 				7C5613D048AB436A81CBC89F /* libRNFirebase.a in Frameworks */,
 				431138AE7AFF4F42B7EC0DAE /* libRNFetchBlob.a in Frameworks */,
 				20B9879C273A471399F3A52A /* libRNImagePicker.a in Frameworks */,
+=======
+>>>>>>> parent of 1b8ee96... camera
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,10 +641,13 @@
 				8D2AA8291C51485B9E4B0B1E /* RNGestureHandler.xcodeproj */,
 				7B438FD1217C4BDF9E4BAEE8 /* RNVectorIcons.xcodeproj */,
 				6E9E517A2B6E46BE84EA2CC5 /* RNCViewpager.xcodeproj */,
+<<<<<<< HEAD
 				3C1B1C7C0C6A4E31BBF41AB0 /* RNCamera.xcodeproj */,
 				ED30BF130FBB4215839B6E47 /* RNFirebase.xcodeproj */,
 				8873AD0B190B495E9ECCEE02 /* RNFetchBlob.xcodeproj */,
 				9972849269B944A297F1AF91 /* RNImagePicker.xcodeproj */,
+=======
+>>>>>>> parent of 1b8ee96... camera
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1309,20 +1321,26 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+<<<<<<< HEAD
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+=======
+>>>>>>> parent of 1b8ee96... camera
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\@react-native-community\viewpager\ios",
+<<<<<<< HEAD
 					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-firebase\ios\RNFirebase/**",
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
+=======
+>>>>>>> parent of 1b8ee96... camera
 				);
 			};
 			name = Debug;
@@ -1349,20 +1367,26 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+<<<<<<< HEAD
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+=======
+>>>>>>> parent of 1b8ee96... camera
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\@react-native-community\viewpager\ios",
+<<<<<<< HEAD
 					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-firebase\ios\RNFirebase/**",
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
+=======
+>>>>>>> parent of 1b8ee96... camera
 				);
 			};
 			name = Release;
@@ -1388,10 +1412,13 @@
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\@react-native-community\viewpager\ios",
+<<<<<<< HEAD
 					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-firebase\ios\RNFirebase/**",
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
+=======
+>>>>>>> parent of 1b8ee96... camera
 				);
 			};
 			name = Debug;
@@ -1416,10 +1443,13 @@
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\@react-native-community\viewpager\ios",
+<<<<<<< HEAD
 					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-firebase\ios\RNFirebase/**",
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
+=======
+>>>>>>> parent of 1b8ee96... camera
 				);
 			};
 			name = Release;
@@ -1454,20 +1484,26 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+<<<<<<< HEAD
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+=======
+>>>>>>> parent of 1b8ee96... camera
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\@react-native-community\viewpager\ios",
+<<<<<<< HEAD
 					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-firebase\ios\RNFirebase/**",
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
+=======
+>>>>>>> parent of 1b8ee96... camera
 				);
 			};
 			name = Debug;
@@ -1502,20 +1538,26 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+<<<<<<< HEAD
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+=======
+>>>>>>> parent of 1b8ee96... camera
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\@react-native-community\viewpager\ios",
+<<<<<<< HEAD
 					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-firebase\ios\RNFirebase/**",
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
+=======
+>>>>>>> parent of 1b8ee96... camera
 				);
 			};
 			name = Release;
@@ -1549,20 +1591,26 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+<<<<<<< HEAD
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+=======
+>>>>>>> parent of 1b8ee96... camera
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\@react-native-community\viewpager\ios",
+<<<<<<< HEAD
 					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-firebase\ios\RNFirebase/**",
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
+=======
+>>>>>>> parent of 1b8ee96... camera
 				);
 			};
 			name = Debug;
@@ -1596,20 +1644,26 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+<<<<<<< HEAD
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+=======
+>>>>>>> parent of 1b8ee96... camera
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
 					"$(SRCROOT)\..\node_modules\@react-native-community\viewpager\ios",
+<<<<<<< HEAD
 					"$(SRCROOT)\..\node_modules\react-native-camera\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-firebase\ios\RNFirebase/**",
 					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios",
+=======
+>>>>>>> parent of 1b8ee96... camera
 				);
 			};
 			name = Release;

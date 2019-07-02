@@ -104,7 +104,6 @@ android {
     defaultConfig {
         applicationId "com.saleapp"
         minSdkVersion rootProject.ext.minSdkVersion
-        missingDimensionStrategy 'react-native-camera', 'general'
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
@@ -139,10 +138,13 @@ android {
 }
 
 dependencies {
+<<<<<<< HEAD
     implementation project(':react-native-fetch-blob')
     implementation project(':react-native-firebase')
     implementation project(':react-native-image-picker')
     implementation project(':react-native-camera')
+=======
+>>>>>>> parent of 1b8ee96... camera
     implementation project(':@react-native-community_viewpager')
     implementation project(':react-native-vector-icons')
     implementation project(':react-native-gesture-handler')

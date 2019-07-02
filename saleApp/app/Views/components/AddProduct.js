@@ -134,6 +134,7 @@ export default class AddProduct extends React.Component{
             keyboardType={'numeric'}
           />
         </View>
+<<<<<<< HEAD
           <TouchableOpacity onPress={this.selectPhotoTapped.bind(this)}>
             <View style={[styles.avatar,styles.avatarContainer,{ marginBottom: 20 }]}>
               {this.state.avatarSource === null ? (
@@ -143,6 +144,23 @@ export default class AddProduct extends React.Component{
               )}
             </View>
           </TouchableOpacity>
+=======
+        <View style={styles.options}>
+          <View style={styles.btnOptions}>
+            <TouchableOpacity>
+              <Image style={styles.imageOption} source={require('./../../img/icons8-cámara-compacta-filled-50.png')}/> 
+        </TouchableOpacity>
+          </View>
+          <View style={styles.btnOptions}>
+            <TouchableOpacity>
+              <Image style={styles.imageOption} source={require('./../../img/icons8-carpeta-filled-50.png')}/> 
+        </TouchableOpacity>
+          </View>
+        </View>
+        <View style={styles.containimageProduct}>
+          <Image style={styles.imageProduct} source={this.state.url}/> 
+        </View>
+>>>>>>> parent of 1b8ee96... camera
         <View style={styles.containerSave}>
           <TouchableOpacity style={styles.btnSave} onPress={this.saveProduct.bind(this)}> 
             <Text style={styles.txtSave}>Guardar</Text>
