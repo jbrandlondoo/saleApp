@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Alert,AsyncStorage, StyleSheet, Text, View, TextInput,TouchableOpacity} from 'react-native';
 import firebaseConfig from './../../CredentialsFirebase';
-// import firebase from 'firebase';
+import firebase from 'firebase';
 
 
 export default class Login extends React.Component{
