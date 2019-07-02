@@ -6,6 +6,7 @@ import com.facebook.react.ReactRootView;
 import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
 import com.imagepicker.permissions.OnImagePickerPermissionsCallback; // <- add this import
 import com.facebook.react.modules.core.PermissionListener;
+import com.rnfs.RNFSPackage; 
 
 public class MainActivity extends ReactActivity {
 	 private PermissionListener listener;
