@@ -1,28 +1,69 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TextInput,TouchableOpacity} from 'react-native';
+import {Alert,AsyncStorage, StyleSheet, Text, View, TextInput,TouchableOpacity} from 'react-native';
+import firebaseConfig from './../../CredentialsFirebase';
+import firebase from 'firebase';
 
 
 export default class Login extends React.Component{
-  add=()=>{
+
+
+constructor(props) {
+    super(props);
+    this.state = {
+      userName:'',
+      phone:'',
+      passWord:'',
+    };
   }
+
+componentWillMount() {
+  try{
+  firebase.initializeApp(firebaseConfig);
+  //  AsyncStorage.setItem('userName','Jose');
+  // AsyncStorage.setItem('phone',323);
+  }catch{
+  }
+  AsyncStorage.setItem('session',"Jose");
+  AsyncStorage.setItem('phone','1234');
+
+  AsyncStorage.getItem('session').then((value)=>{
+    if(value){
+     this.props.navEvent.navigation.navigate('Home');
+    }
+  });
+  };
+
+fetchUser = ()=>{
+        let passWordD = this.state.passWord;
+        let nav = this.props.navEvent.navigation;
+        const temp = firebase.database().ref('users/'+this.state.userName).on('value',function(snapshot){
+            let passWordB = snapshot.val().passWord;
+            if (passWordB === passWordD) {
+              nav.navigate('Home');
+            }else{
+            Alert.alert('Intentelo de nuevo');
+            }
+        });
+};
+
   render(){
     return (
       <View style={styles.container}>
         <View style={styles.inputsLogin}>
           <TextInput
             style={styles.inputCredential}
-            onChangeText={()=>{this.add}}
-            placeholder="Mail"
+            onChangeText={(typedText)=>{this.setState({userName:typedText})}} 
+            placeholder="Nombre usuario"
           />
           <TextInput
             style={styles.inputCredential}
-            onChangeText={()=>{this.add}}
+            onChangeText={(typedText)=>{this.setState({passWord:typedText})}}
             secureTextEntry = {true}
             placeholder="Contraseña"
           />
           <TouchableOpacity 
           style={styles.buttonLogin}
-           onPress={() => this.props.navEvent.navigation.navigate('Home')}
+           onPress={this.fetchUser}
           >
             <Text style={styles.textButtonLogin}>Ingresar</Text>
           </TouchableOpacity>

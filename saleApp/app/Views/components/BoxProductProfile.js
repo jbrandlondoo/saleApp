@@ -16,12 +16,10 @@ export default class AddProductProfile extends React.Component{
   constructor(){
     super();
     this.state = {
-      nameProduct:"La mejor del anime",
-      actualStateProduct:this.available,
-      backStateProduct:this.soldOut,
+      nameProduct:this.props.description,
       date:"27/05/2019",
-      cost:"2^infinito$",
-      url:"https://i.pinimg.com/236x/5b/f4/b7/5bf4b77a469746a0d45c52bac9c125fa.jpg",
+      cost:this.props.cost,
+      url:this.props.url,
     }
   }
   render() {
@@ -32,16 +30,7 @@ export default class AddProductProfile extends React.Component{
           </View>
           <Image style={styles.image} source={{uri:this.state.url}}/> 
           <Text style={styles.cost}>{this.state.cost}</Text>
-          <TouchableOpacity onPress={()=>{
-            let temp = this.state.actualStateProduct;
-            this.setState({ 
-              actualStateProduct:this.state.backStateProduct,
-              backStateProduct:temp,
-            });
-          }}>
-          <Text style={this.state.actualStateProduct.style}>{this.state.actualStateProduct.text}</Text>
-          </TouchableOpacity>
-          <Text style={styles.date}>{this.state.date}</Text>
+          // <Text style={styles.date}>{this.state.date}</Text>
         </View>
     );
   }  
@@ -86,3 +75,18 @@ const styles = StyleSheet.create({
     marginLeft:10,
   },
 });
+
+
+
+/***
+<TouchableOpacity onPress={()=>{
+          //   let temp = this.state.actualStateProduct;
+          //   this.setState({ 
+          //     actualStateProduct:this.state.backStateProduct,
+          //     backStateProduct:temp,
+          //   });
+          // }}>
+          // <Text style={this.state.actualStateProduct.style}>{this.state.actualStateProduct.text}</Text>
+          // </TouchableOpacity>
+
+***/

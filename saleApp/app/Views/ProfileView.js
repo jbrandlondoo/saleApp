@@ -10,7 +10,7 @@ export default class ProfileView extends React.Component{
 		return(
 			<View>
 				<ScrollView>
-					<Profile/>
+					<Profile navEvent={this.props}/>
 				</ScrollView>
 			</View>
 		);

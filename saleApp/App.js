@@ -15,6 +15,7 @@ import ShopView from "./app/Views/ShopView";
 import ProfileView from "./app/Views/ProfileView";
 import AddProductView from "./app/Views/AddProductView";
 import CameraView from "./app/Views/CameraView";
+import CameraRollView from "./app/Views/CameraRollView";
 
 
 
@@ -85,6 +86,11 @@ const AppNavigator = createStackNavigator({
   },
   Register:{
     screen: RegisterView,
+    navigationOptions:  {
+    },
+  },
+    CameraRoll:{
+    screen: CameraRollView,
     navigationOptions:  {
     },
   },

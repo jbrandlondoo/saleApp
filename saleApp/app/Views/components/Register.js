@@ -1,33 +1,65 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TextInput,TouchableOpacity} from 'react-native';
-
+import {Alert, StyleSheet, Text, View, TextInput,TouchableOpacity} from 'react-native';
+import firebaseConfig from './../../CredentialsFirebase';
+import firebase from 'firebase';
 
 export default class Register extends React.Component{
-  add=()=>{
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      userName:'',
+      phone:'',
+      passWord:'',
+    };
   }
+
+  componentWillMount() {
+  try{
+  firebase.initializeApp(firebaseConfig);
+  }catch{
+
+  }
+  };
+
+  insertUser = ()=>{
+            firebase.database().ref('users/'+this.state.userName).set(
+            {
+                phone: this.state.phone,
+                passWord:this.state.passWord
+            }
+            ).then(() => {
+                this.props.navEvent.navigation.goBack();
+            }).catch((error) => {
+                // Alert.alert(error+"");
+            });
+  };
+
   render(){
     return (
       <View style={styles.container}>
         <View style={styles.inputsLogin}>
           <TextInput
             style={styles.inputCredential}
-            onChangeText={()=>{this.add}}
+            onChangeText={(typedText)=>{this.setState({userName:typedText})}}
             placeholder="nombre usuario"
           />
           <TextInput
             style={styles.inputCredential}
-            onChangeText={()=>{this.add}}
+            onChangeText={(typedText)=>{this.setState({phone:typedText})}} 
             placeholder="Teléfono"
             keyboardType={'numeric'}
 
           />
           <TextInput
             style={styles.inputCredential}
-            onChangeText={()=>{this.add}}
+            onChangeText={(typedText)=>{this.setState({passWord:typedText})}}
             secureTextEntry = {true}
             placeholder="Contraseña"
           />
-          <TouchableOpacity style={styles.buttonLogin}>
+          <TouchableOpacity style={styles.buttonLogin}
+            onPress={this.insertUser}
+          >
             <Text style={styles.textButtonLogin}>Registarme</Text>
           </TouchableOpacity>
         </View>   

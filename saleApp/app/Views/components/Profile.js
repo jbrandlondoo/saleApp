@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View,TouchableOpacity,Image,Alert,TextInput} from 'react-native';
+import {StyleSheet, Text,AsyncStorage, View,TouchableOpacity,Image,Alert,TextInput} from 'react-native';
+import { NavigationActions } from 'react-navigation';
 
 
 export default class Profile extends React.Component{
@@ -12,12 +13,20 @@ export default class Profile extends React.Component{
 
     }
   }
+
+logout = ()=>{
+  AsyncStorage.removeItem('session');
+  this.props.navEvent.navigation.navigate('Login');
+}
+
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.containerClose}>
           <View style={{flex:1}}></View>
-          <TouchableOpacity style={styles.btnClose}>
+          <TouchableOpacity style={styles.btnClose}
+            onPress={this.logout}
+          >
             <Text style={styles.txtClose}>Cerrar Sesión</Text>
           </TouchableOpacity>
         </View>

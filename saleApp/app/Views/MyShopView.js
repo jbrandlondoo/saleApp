@@ -21,9 +21,6 @@ export default class ShopView extends React.Component{
 				          <Text style={styles.txtAddView}>+Agregar</Text>
 				        </TouchableOpacity> 
       				</View>
-
-					<BoxProductProfile/>
-					<BoxProductProfile/>
 				</ScrollView>
 			</View>
 		);
