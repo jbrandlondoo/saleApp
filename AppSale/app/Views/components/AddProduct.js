@@ -73,54 +73,54 @@ export default class AddProduct extends React.Component{
 //   })
 // }
 
-  uploadImage = async() => {
-    // let file
-    // let data64 = this.state.imageUri.split('')
-    // Alert.alert(this.state.imageUri.uri.replace('file///',''))
-    // await RNFS.readFile(this.state.imageUri.uri.replace('file//',''), 'base64').then(res => {
-    //   file = new Uint8Array(new ArrayBuffer(data64.length));
-    //   for(i = 0; i < data64.length; i++) {
-    //     file[i] = data64.charCodeAt(i);
-    //   }
-    // })
-    // .catch(err => {
-    //   Alert.alert("No se pudo leer");
-    // });
-    // let bufer = this.state.imageUri;
-    // const ext = (this.state.avatarSource.uri+'').split('.').pop(); // Extract image extension
-    // const filename = `${this.state.userName+this.state.description}.${ext}`; // Generate unique name
-    // this.setState({ uploading: true });
-    // await firebase
-    //   .storage()
-    //   .ref(`images/${filename}`)
-    //   .put(bufer)
-    //   .on(
-    //     firebase.storage.TaskEvent.STATE_CHANGED,
-    //     snapshot => {
-    //       let state = {};
-    //       state = {
-    //         ...state,
-    //         progress: (snapshot.bytesTransferred / snapshot.totalBytes) * 100 // Calculate progress percentage
-    //       };
-    //       if (snapshot.state === firebase.storage.TaskState.SUCCESS) {
-    //         const allImages = snapshot.downloadURL
-    //         state = {
-    //           ...state,
-    //           uploading: false,
-    //           imgSource: '',
-    //           imageUri: '',
-    //           progress: 0,
-    //           images:allImages 
-    //         };
-    //       }
-    //       this.setState(state);
-    //     },
-    //     error => {
-    //       unsubscribe();
-    //       alert('Sorry, Try again.');
-    //     }
-    //   );
-  };
+  // uploadImage = async() => {
+  //   let file
+  //   Alert.alert(this.state.imageUri.path)
+  //   await RNFS.readFile(this.state.imageUri.path, 'base64').then(res => {
+  //     Alert.alert(res)
+  //     file = new Uint8Array(new ArrayBuffer(res.length));
+  //     for(i = 0; i < res.length; i++) {
+  //       file[i] = res.charCodeAt(i);
+  //     }
+  //   })
+  //   .catch(err => {
+  //     Alert.alert("No se pudo leer");
+  //   });
+
+  //   const ext = (this.state.avatarSource.uri+'').split('.').pop(); // Extract image extension
+  //   const filename = `${this.state.userName+this.state.description}.${ext}`; // Generate unique name
+  //   this.setState({ uploading: true });
+  //   await firebase
+  //     .storage()
+  //     .ref(`images/${filename}`)
+  //     .put(file)
+  //     .on(
+  //       firebase.storage.TaskEvent.STATE_CHANGED,
+  //       snapshot => {
+  //         let state = {};
+  //         state = {
+  //           ...state,
+  //           progress: (snapshot.bytesTransferred / snapshot.totalBytes) * 100 // Calculate progress percentage
+  //         };
+  //         if (snapshot.state === firebase.storage.TaskState.SUCCESS) {
+  //           const allImages = snapshot.downloadURL
+  //           state = {
+  //             ...state,
+  //             uploading: false,
+  //             imgSource: '',
+  //             imageUri: '',
+  //             progress: 0,
+  //             images:allImages 
+  //           };
+  //         }
+  //         this.setState(state);
+  //       },
+  //       error => {
+  //         unsubscribe();
+  //         alert('Sorry, Try again.');
+  //       }
+  //     );
+  // };
 
   selectPhotoTapped() {
     const options = {
@@ -134,11 +134,11 @@ export default class AddProduct extends React.Component{
 
     ImagePicker.showImagePicker(options, (response) => {
       console.log('Response = ', response);
-        // let source = { uri: response.uri, };
-        let source = { uri: 'data:image/jpeg;base64,' + response.data };
+        let source = { uri: response.uri };
+        let uri = {uri: 'data:image/jpeg;base64,'+response.data} 
         this.setState({
           avatarSource: source,
-          imageUri: '',
+          imageUri: uri,
         });
     });
   }
@@ -149,7 +149,7 @@ export default class AddProduct extends React.Component{
                 description: this.state.description,
                 cost: this.state.cost,
                 phone: this.state.phone,
-                url: this.state.avatarSource,
+                url: this.state.imageUri.uri,
                 userName:this.state.userName,
             }
             ).then(() => {

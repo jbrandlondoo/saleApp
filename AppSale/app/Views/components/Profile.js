@@ -1,22 +1,59 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text,AsyncStorage, View,TouchableOpacity,Image,Alert,TextInput} from 'react-native';
-
+import firebaseConfig from './../../CredentialsFirebase';
+import firebase from 'firebase';
 
 export default class Profile extends React.Component{
     constructor(){
     super();
     this.state = {
-      userName:'userName',
-      passWord:'password',
-      phone:'11234',
-
+      userName:'',
+      passWord:'',
+      phone:'',
     }
   }
 
+  async componentWillMount() {
+  try{
+  firebase.initializeApp(firebaseConfig);
+  }catch{
+  }
+    await AsyncStorage.getItem('session').then((value)=>{
+    if(value){
+        this.setState({
+          userName:value,
+        });
+      }
+    });
+    let self = this
+    firebase.database().ref('users/'+this.state.userName).on('value',function(snapshot){
+        let phone = snapshot.val().phone;
+        let passWord = snapshot.val().passWord;
+        self.setState({
+          phone:phone,
+          passWord:passWord,
+        })
+    });
+
+  };
+
 logout = ()=>{
   AsyncStorage.removeItem('session');
-  // this.props.navEvent.navigation.navigate('Login');
+  this.props.navEvent.navigation.navigate('Login');
 }
+
+saveChange(){
+  firebase.database().ref('users/'+this.state.userName).update(
+            {
+                phone: this.state.phone,
+                passWord:this.state.passWord,
+            }
+            ).then(() => {
+                this.props.navEvent.navigation.goBack();
+            }).catch((error) => {
+                // Alert.alert(error+"");
+            });
+} 
 
   render() {
     return (
@@ -30,11 +67,6 @@ logout = ()=>{
           </TouchableOpacity>
         </View>
         <Text>Usuario : {this.state.userName}</Text>
-        <TextInput
-            style={styles.inputUpdateData}
-            placeholder='nuevo'
-            onChangeText={(typedText)=>{this.setState({userName:typedText})}}          
-          />
         <Text>Teléfono : {this.state.phone}</Text>        
         <TextInput
           style={styles.inputUpdateData}
@@ -49,7 +81,7 @@ logout = ()=>{
           secureTextEntry = {true}
           onChangeText={(typedText)=>{this.setState({passWord:typedText})}}            
         />
-        <View style={styles.containerSave}>
+        <View style={styles.containerSave} onPress={this.saveChange}>
           <TouchableOpacity style={styles.btnSave}>
             <Text style={styles.txtSave}>Guardar</Text>
           </TouchableOpacity>

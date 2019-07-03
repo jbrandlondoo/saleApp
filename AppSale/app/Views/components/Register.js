@@ -8,9 +8,9 @@ export default class Register extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      userName:'',
-      phone:'',
-      passWord:'',
+      userName:null,
+      phone:1,
+      passWord:1,
     };
   }
 
@@ -18,21 +18,22 @@ export default class Register extends React.Component{
   try{
   firebase.initializeApp(firebaseConfig);
   }catch{
-
   }
   };
 
   insertUser = ()=>{
+          this.state.userName?
             firebase.database().ref('users/'+this.state.userName).set(
             {
                 phone: this.state.phone,
-                passWord:this.state.passWord
+                passWord:this.state.passWord,
+                name:this.state.userName
             }
             ).then(() => {
                 this.props.navEvent.navigation.goBack();
             }).catch((error) => {
                 // Alert.alert(error+"");
-            });
+            }):null
   };
 
   render(){

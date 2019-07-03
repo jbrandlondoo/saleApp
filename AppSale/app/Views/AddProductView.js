@@ -4,13 +4,6 @@ import AddProduct from "./components/AddProduct";
 
 
 export default class ShopView extends React.Component{
-	static navigationOptions = {
-	    title: 'SaleApps',
-      	headerTintColor: '#FFFFFF',
-	    headerStyle: {
-      		backgroundColor: '#AB3A1F',
-    	},
-  	};
 	render(){
 		return(
 			<View>

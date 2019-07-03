@@ -27,7 +27,7 @@ const TabNavigator = createMaterialTopTabNavigator(
         },
       },
     Myshop: {
-        screen:MyShopView,
+        screen:AddProductView,
         navigationOptions:  {
           title:'My tienda',
         },

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Alert,AsyncStorage, StyleSheet, Text, View, TextInput,TouchableOpacity} from 'react-native';
 import firebaseConfig from './../../CredentialsFirebase';
+import LoadView from './../LoadView';
 import firebase from 'firebase';
 
 
@@ -11,8 +12,10 @@ constructor(props) {
     super(props);
     this.state = {
       userName:'',
-      phone:'',
+      phone:1,
       passWord:'',
+      flag:0,
+      session:0
     };
   }
 
@@ -21,30 +24,49 @@ componentWillMount() {
   firebase.initializeApp(firebaseConfig);
   }catch{
   }
-  AsyncStorage.setItem('session',"Jose");
-  AsyncStorage.setItem('phone','1234');
-
+  let self = this
   AsyncStorage.getItem('session').then((value)=>{
     if(value){
      this.props.navEvent.navigation.navigate('Home');
+     self.setState({
+      session:1
+     })
     }
   });
   };
 
-fetchUser = ()=>{
+fetchUser = async ()=>{
         let passWordD = this.state.passWord;
+        let self = this
         let nav = this.props.navEvent.navigation;
-        const temp = firebase.database().ref('users/'+this.state.userName).on('value',function(snapshot){
+        await firebase.database().ref('users/'+this.state.userName).on('value',function(snapshot){
+            if(snapshot.val()){
             let passWordB = snapshot.val().passWord;
             if (passWordB === passWordD) {
-              nav.navigate('Home');
+                let phone = snapshot.val().phone?snapshot.val().phone:1
+              self.setState({
+                  flag:1,
+                  phone:phone,
+                  session:1
+              })
             }else{
             Alert.alert('Intentelo de nuevo');
             }
+          }
         });
+
+        if(this.state.flag){
+          Alert.alert(self.state.userName)
+          await AsyncStorage.setItem('session',self.state.userName);
+          await AsyncStorage.setItem('phone',self.state.phone);
+          this.props.navEvent.navigation.navigate('Home');
+        }
 };
 
   render(){
+    if (this.state.session) {
+      return this.props.navEvent.navigation.navigate('Home');
+    }
     return (
       <View style={styles.container}>
         <View style={styles.inputsLogin}>
@@ -75,7 +97,6 @@ fetchUser = ()=>{
     );
   }
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
