@@ -4,7 +4,7 @@ import {AppRegistry,Alert,Platform,AsyncStorage,Image,PixelRatio,StyleSheet,Text
 import ImagePicker from 'react-native-image-picker';
 import firebaseConfig from './../../CredentialsFirebase';
 import firebase from 'firebase';
-
+import NetInfo from "@react-native-community/netinfo";
 
 const RNFS = require('react-native-fs');
 export default class AddProduct extends React.Component{
@@ -28,22 +28,22 @@ export default class AddProduct extends React.Component{
     }
 
 
-   componentWillMount() {
-    try{
-    firebase.initializeApp(firebaseConfig);
-    }catch{
-    }
-    AsyncStorage.getItem('session').then((value)=>{
-    if(value){
-     this.setState({userName:value});
-    }
-    });
+   componentDidMount() {
+      try{
+      firebase.initializeApp(firebaseConfig);
+      }catch{
+      }
+      AsyncStorage.getItem('session').then((value)=>{
+      if(value){
+       this.setState({userName:value});
+      }
+      });
 
-    AsyncStorage.getItem('phone').then((value)=>{
-    if(value){
-     this.setState({phone:value});
-    }
-    });
+      AsyncStorage.getItem('phone').then((value)=>{
+      if(value){
+       this.setState({phone:value});
+      }
+      });
 
     }
 
@@ -128,7 +128,7 @@ export default class AddProduct extends React.Component{
       maxWidth: 500,
       maxHeight: 500,
       storageOptions: {
-        skipBackup: true,
+        skipBackup: false,
       },
     };
 
@@ -153,23 +153,33 @@ export default class AddProduct extends React.Component{
     let dateString = dateObject.getFullYear()+''+month+''+date+''+hours+''+minute+''+seconds
     return dateString
   }
-  insertToDB(){
+
+  async getNetiInf(){
+    let infoNet
+    await NetInfo.fetch().then(state => {
+      infoNet = state.isConnected
+    });
+    return infoNet
+  }
+  async insertToDB(){
+    let infoNet = await this.getNetiInf()
+    Alert.alert(infoNet+'')
     let dateString = this.getKeyProduct()
     let keyProduct = dateString+''+this.state.phone;
-    firebase.database().ref('products/'+keyProduct).set(
-            {
-                description: this.state.description,
-                cost: this.state.cost,
-                phone: this.state.phone,
-                url: this.state.imageUri.uri,
-                userName:this.state.userName,
-                dateUpload:dateString
-            }
-            ).then(() => {
-                this.props.navEvent.navigation.goBack();
-            }).catch((error) => {
-                // Alert.alert(error+"");
-            });
+    // firebase.database().ref('products/'+keyProduct).set(
+    //         {
+    //             description: this.state.description,
+    //             cost: this.state.cost,
+    //             phone: this.state.phone,
+    //             url: this.state.imageUri.uri,
+    //             userName:this.state.userName,
+    //             dateUpload:dateString
+    //         }
+    //         ).then(() => {
+    //             this.props.navEvent.navigation.goBack();
+    //         }).catch((error) => {
+    //             Alert.alert(error+'')
+    //         });
   }
   saveProduct(){
 
