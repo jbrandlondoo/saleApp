@@ -143,14 +143,27 @@ export default class AddProduct extends React.Component{
     });
   }
 
+  getKeyProduct(){
+    let dateObject = new Date()
+    let month =  dateObject.getMonth()>9?dateObject.getMonth():'0'+dateObject.getMonth()
+    let date =  dateObject.getDate()>9?dateObject.getDate():'0'+dateObject.getDate()
+    let hours =  dateObject.getHours()>9?dateObject.getHours():'0'+dateObject.getHours()
+    let minute =  dateObject.getMinutes()>9?dateObject.getMinutes():'0'+dateObject.getMinutes()
+    let seconds =  dateObject.getSeconds()>9?dateObject.getSeconds():'0'+dateObject.getSeconds()
+    let dateString = dateObject.getFullYear()+''+month+''+date+''+hours+''+minute+''+seconds
+    return dateString
+  }
   insertToDB(){
-    firebase.database().ref('products/'+this.state.userName+this.state.description).set(
+    let dateString = this.getKeyProduct()
+    let keyProduct = dateString+''+this.state.phone;
+    firebase.database().ref('products/'+keyProduct).set(
             {
                 description: this.state.description,
                 cost: this.state.cost,
                 phone: this.state.phone,
                 url: this.state.imageUri.uri,
                 userName:this.state.userName,
+                dateUpload:dateString
             }
             ).then(() => {
                 this.props.navEvent.navigation.goBack();

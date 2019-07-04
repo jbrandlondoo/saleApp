@@ -22,7 +22,7 @@ export default class BoxProduct extends React.Component{
         	<Text style={styles.nameTxt}>{this.state.nameUser}</Text> 
         	</View>
         	<Image style={styles.image} source={{uri:this.state.url}}/> 
-        	<Text style={styles.cost}>{this.state.cost}</Text>
+        	<Text style={styles.cost}>Valor:{this.state.cost+'$'}</Text>
         </View>
 		);
 	}
