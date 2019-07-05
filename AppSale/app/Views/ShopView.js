@@ -17,7 +17,7 @@ export default class ShopView extends React.Component{
       listProduct:'',
       loading:true,
     }
-  	componentDidMount() {
+  	componentWillMount() {
 	  try{
 	  firebase.initializeApp(firebaseConfig);
 	  }catch{
@@ -52,7 +52,6 @@ export default class ShopView extends React.Component{
 		return(
 			<View>
 				<FlatList
-				inverted
 				  data={this.state.listProduct}
 				  renderItem={({item}) => <BoxProduct val={item}/>}
 				/>		

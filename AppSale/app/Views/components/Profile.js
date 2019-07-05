@@ -43,8 +43,16 @@ logout = ()=>{
 }
 
 saveChange(){
-  
-  Alert.alert('¡Oops! todavía no está disponible')
+  firebase.database().ref('users/'+this.state.userName).update(
+            {
+                phone: this.state.phone,
+                passWord:this.state.passWord,
+            }
+            ).then(() => {
+                this.props.navEvent.navigation.goBack();
+            }).catch((error) => {
+                // Alert.alert(error+"");
+            });
 } 
 
   render() {
@@ -73,10 +81,8 @@ saveChange(){
           secureTextEntry = {true}
           onChangeText={(typedText)=>{this.setState({passWord:typedText})}}            
         />
-        <View style={styles.containerSave} >
-          <TouchableOpacity style={styles.btnSave} onPress={()=>{
-          Alert.alert('¡Oops! todavía no está disponible')
-        }}>
+        <View style={styles.containerSave} onPress={this.saveChange}>
+          <TouchableOpacity style={styles.btnSave}>
             <Text style={styles.txtSave}>Guardar</Text>
           </TouchableOpacity>
         </View>
