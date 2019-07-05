@@ -9,24 +9,22 @@ export default class ShopView extends React.Component{
 	    title: 'AppSale',
   	};
 
-	constructor(props) {
-		super(props);
-	    this.state={
-	      listProduct:'',
-	      loading:true,
-	    }
+  	constructor(props) {
+    super(props);
     
    }
-
-
+   state={
+      listProduct:'',
+      loading:true,
+    }
   	componentDidMount() {
 	  try{
 	  firebase.initializeApp(firebaseConfig);
 	  }catch{
 	  }
-	  let self = this;
+	  var self = this;
 	  firebase.database().ref('products/').on('value',function(snapshot){
-	  let items = [];
+	  var items = [];
       snapshot.forEach((child) => {
         items.push({
             nameProduct:child.val().description,
@@ -42,6 +40,7 @@ export default class ShopView extends React.Component{
       });
 
         });
+
 	}
 	render(){
 		if (this.state.loading) {

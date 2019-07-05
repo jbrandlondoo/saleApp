@@ -138,7 +138,6 @@ android {
 }
 
 dependencies {
-    implementation project(':@react-native-community_netinfo')
     implementation project(':react-native-fs')
     implementation project(':react-native-image-picker')
     implementation project(':react-native-gesture-handler')
