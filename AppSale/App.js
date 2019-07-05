@@ -74,7 +74,7 @@ const AppNavigator = createStackNavigator({
         backgroundColor: '#AB3A1F',
       },
       headerTintColor: '#FFFFFF',
-      title: 'SaleApp',
+      title: 'AppSale',
     },
   },
 

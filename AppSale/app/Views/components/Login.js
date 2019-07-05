@@ -56,7 +56,6 @@ fetchUser = async ()=>{
         });
 
         if(this.state.flag){
-          Alert.alert(self.state.userName)
           await AsyncStorage.setItem('session',self.state.userName);
           await AsyncStorage.setItem('phone',self.state.phone);
           this.props.navEvent.navigation.navigate('Home');
