@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   time2:{
     height:5,
     width:5,
-    backgroundColor:'#FFF',
+    backgroundColor:'#FFFFFF',
     borderRadius:2,
     margin:3,
   },
